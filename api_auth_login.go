@@ -32,7 +32,7 @@ import (
 )
 
 func IsTokenExpired(err error) bool {
-	return err != nil && strings.Contains(err.Error(), "AccessTokenExpired")
+	return err != nil && strings.Contains(strings.ToLower(err.Error()), "expired")
 }
 
 type LoginByQrcodeReq struct {
